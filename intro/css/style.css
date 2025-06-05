@@ -1,0 +1,366 @@
+/* style.css */
+
+/* --- Variáveis CSS (Cores e Fontes) --- */
+:root {
+    --c6-black: #000000;
+    --c6-dark-gray: #1a1a1a; /* Para botões ou elementos um pouco mais claros */
+    --c6-white: #ffffff;
+    --c6-light-gray: #d3d3d3; /* Para ícones e texto secundário */
+    --c6-orange: #ff6600; /* Início do gradiente */
+    --c6-red: #ff3300; /* Fim do gradiente */
+
+    /* Fontes - Tente usar fontes similares ou genéricas que se pareçam */
+    --font-primary: 'Arial', sans-serif; /* Substitua por uma fonte mais próxima se disponível (ex: Lato, Open Sans) */
+    --font-headline: 'Arial Black', sans-serif; /* Para o estilo do título, mas procure algo mais leve */
+}
+
+/* --- Estilos Globais e Reset Básico --- */
+body {
+    margin: 0;
+    font-family: var(--font-primary);
+    background-color: var(--c6-black);
+    color: var(--c6-white);
+    line-height: 1.6;
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    display: flex;
+    flex-direction: column; /* Permite que o footer "empurre" para baixo */
+}
+
+a {
+    text-decoration: none;
+    color: var(--c6-white);
+}
+
+a:hover {
+    color: var(--c6-light-gray);
+}
+
+/* --- Cabeçalho (Header) --- */
+header {
+    background-color: var(--c6-black);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--c6-dark-gray); /* Linha sutil abaixo do header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra sutil para destacar */
+}
+
+.logo {
+    font-family: var(--font-headline); /* Usando uma fonte mais impactante para o logo */
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--c6-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    font-size: 0.7em;
+    vertical-align: super; /* Alinha 'APP' um pouco acima */
+    opacity: 0.8;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--c6-orange);
+}
+
+.header-buttons {
+    display: flex;
+    gap: 15px; /* Espaço entre os botões no cabeçalho */
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    font-size: 0.9em; /* Ajuste para caber melhor no cabeçalho */
+}
+
+.btn-primary {
+    background-color: var(--c6-white);
+    color: var(--c6-black);
+}
+
+.btn-primary:hover {
+    background-color: var(--c6-light-gray);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--c6-white);
+    border: 1px solid var(--c6-white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--c6-white);
+    color: var(--c6-black);
+}
+
+/* --- Conteúdo Principal (Main Content) --- */
+.main-content {
+    flex: 1; /* Permite que o conteúdo principal ocupe o espaço restante */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza verticalmente o formulário */
+    padding: 40px 20px; /* Adiciona padding ao redor do formulário */
+}
+
+.form-section {
+    max-width: 700px; /* Largura máxima para o conteúdo da seção */
+    width: 100%; /* Garante que ocupe a largura disponível */
+    background-color: var(--c6-black); /* Fundo preto para a seção, se desejar um contraste */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada */
+    text-align: center; /* Centraliza o título */
+}
+
+.form-section h1 {
+    font-family: var(--font-headline);
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: var(--c6-white);
+    text-align: center;
+}
+
+/* --- Estilos para o Formulário --- */
+form {
+    text-align: left; /* Alinha os labels e inputs à esquerda dentro do form */
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--c6-light-gray); /* Cor do texto do label */
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea {
+    width: calc(100% - 22px); /* Ajusta para padding e borda */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #444; /* Borda mais escura */
+    border-radius: 6px;
+    background-color: #2a2a2a; /* Fundo do input um pouco mais claro que o geral */
+    color: var(--c6-white);
+    box-sizing: border-box; /* Garante que padding não adicione à largura total */
+    font-size: 1em;
+}
+
+form input[type="file"] {
+    width: 100%;
+    margin-bottom: 20px;
+    color: var(--c6-light-gray); /* Cor do texto do input file */
+    font-size: 0.95em;
+}
+
+form input[type="file"]::-webkit-file-upload-button {
+    /* Estiliza o botão "Escolher arquivo" */
+    background-color: var(--c6-dark-gray);
+    color: var(--c6-white);
+    padding: 8px 15px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #444;
+}
+
+form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 100px;
+}
+
+form input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px 25px;
+    background: linear-gradient(to right, var(--c6-red), var(--c6-orange)); /* Gradiente nos botões principais */
+    color: var(--c6-white);
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s ease; /* Transição de opacidade para hover */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); /* Sombra para o botão */
+}
+
+form input[type="submit"]:hover {
+    opacity: 0.9; /* Leve opacidade ao passar o mouse */
+}
+
+form input[disabled] {
+    background-color: #555;
+    cursor: not-allowed;
+    opacity: 0.7;
+    border: none;
+}
+
+/* --- Rodapé (Footer) --- */
+footer {
+    background-color: var(--c6-black);
+    color: var(--c6-light-gray);
+    padding: 40px 40px;
+    text-align: center;
+    border-top: 1px solid var(--c6-dark-gray); /* Linha sutil acima do footer */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Sombra sutil para destacar */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 180px; /* Largura mínima para as colunas do rodapé */
+    margin: 0 15px 30px 15px;
+}
+
+.footer-section h4 {
+    color: var(--c6-white);
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: var(--c6-light-gray);
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--c6-orange);
+}
+
+.footer-bottom-text {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--c6-dark-gray);
+    font-size: 0.85em;
+    color: var(--c6-light-gray);
+    text-align: center;
+    width: 100%;
+}
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 850px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .header-buttons {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .form-section h1 {
+        font-size: 1.8em;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin: 0 0 20px 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    header, footer {
+        padding: 15px 15px;
+    }
+
+    .logo {
+        font-size: 1.7em;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.8em;
+    }
+
+    .form-section {
+        padding: 20px;
+    }
+
+    form input[type="text"],
+    form input[type="number"],
+    form textarea,
+    form input[type="file"] {
+        width: calc(100% - 20px); /* Ajuste menor para padding */
+        padding: 10px;
+    }
+
+    form input[type="submit"] {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}

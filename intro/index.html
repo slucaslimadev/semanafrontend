@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JFono - Cadastro de Exercício</title>
+    <link rel="stylesheet" href="css/style.css"> </head>
+<body>
+ 
+
+    <main class="main-content">
+        <section class="form-section">
+            <h1>Cadastro de Novo Exercício</h1>
+
+            <form>
+                <label for="inId">ID do Exercício:</label>
+                <input type="number" id="inId" placeholder="ID" disabled>
+
+                <label for="inNome">Nome do Exercício:</label>
+                <input type="text" id="inNome" placeholder="Digite o nome do exercício" required>
+
+                <label for="inDescricao">Descrição do Exercício:</label>
+                <textarea id="inDescricao" placeholder="Descreva o exercício em detalhes"></textarea>
+
+                <label for="inSom">Arquivo de Áudio (Som):</label>
+                <input type="file" id="inSom" accept="audio/*">
+
+                <label for="inTempoMin">Tempo Mínimo (minutos):</label>
+                <input type="number" id="inTempoMin" min="1" placeholder="Ex: 5">
+
+                <label for="inExemplo">Arquivo de Exemplo (Imagem/Vídeo):</label>
+                <input type="file" id="inExemplo" accept="image/*,video/*">
+                
+                <input type="submit" value="Cadastrar Exercício">
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Exercícios</h4>
+                <ul>
+                    <li><a href="#">Explorar</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Populares</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="#">Guia de Uso</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-bottom-text">&copy; 2025 JFono. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="js/exercicio.js"></script>
+</body>
+</html>
